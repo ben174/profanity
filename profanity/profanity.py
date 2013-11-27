@@ -17,3 +17,28 @@ def contains_profanity(input_text):
     Otherwise, returns False.
     """
     return False
+
+
+def load_words(filename=None):
+    pass
+
+def main():
+    parser = argparse.ArgumentParser(description='Check input for profanity.')
+    parser.add_argument('-f', '--filename', dest='path', type=str,
+                        help='Path to input file to check.')
+    parser.add_argument('-t', '--text', dest='text', type=str,
+                        help='Text to check.')
+    args = parser.parse_args()
+    if args.path:
+        f = open(args.path)
+        text = "".join(f.readlines())
+    elif args.text:
+        text = args.text
+    else:
+        print "No input specified."
+        return
+    print contains_profanity(text)
+
+
+if __name__ == '__main__':
+    main()
