@@ -13,16 +13,29 @@ def get_data(path):
     return os.path.join(_ROOT, 'data', path)
 
 
+def get_words():
+    if not words:
+        load_words()
+    return words
+
+
 def contains_profanity(input_text):
     """Checks the input_text for any profanity and returns True if it does.
     Otherwise, returns False.
     """
-    if not words:
-        load_words()
+    words = get_words()
     for word in words:
         if word in input_text:
             return True
     return False
+
+
+def censor(input_text):
+    ret = input_text
+    words = get_words()
+    for word in words:
+        ret = ret.replace(word, '*'*len(word))
+    return ret
 
 
 def load_words(filename=None):
