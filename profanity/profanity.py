@@ -4,6 +4,7 @@ import os
 import argparse
 
 lines = None
+words = None
 
 _ROOT = os.path.abspath(os.path.dirname(__file__))
 
@@ -16,11 +17,22 @@ def contains_profanity(input_text):
     """Checks the input_text for any profanity and returns True if it does.
     Otherwise, returns False.
     """
+    if not words:
+        load_words()
+    for word in words:
+        if word in input_text:
+            return True
     return False
 
 
 def load_words(filename=None):
-    pass
+    if not filename:
+        filename = get_data('wordlist.txt')
+    f = open(filename)
+    global words
+    words = f.readlines()
+    words = [w.strip() for w in words if w]
+
 
 def main():
     parser = argparse.ArgumentParser(description='Check input for profanity.')
