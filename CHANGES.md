@@ -1,6 +1,5 @@
-
 ## Version 1.0
-Basic features - Test and censor with a standard "****" string.
+* Basic features - Test and censor with a standard "****" string.
 
 ## Version 1.1
 * Created a "censor pool" which must be exhausted before loading more censor

@@ -3,7 +3,6 @@
 """
 
 import os
-import argparse
 import random
 import re
 
@@ -52,11 +51,7 @@ def contains_profanity(input_text):
     """Checks the input_text for any profanity and returns True if it does.
     Otherwise, returns False.
     """
-    words = get_words()
-    for word in words:
-        if word in input_text:
-            return True
-    return False
+    return input_text != censor(input_text)
 
 
 def censor(input_text):
@@ -73,14 +68,16 @@ def censor(input_text):
     return ret
 
 
-def load_words(filename=None):
+def load_words(wordlist=None):
     """ Loads and caches the profanity word list. Input file (if provided)
     should be a flat text file with one profanity entry per line.
 
     """
-    if not filename:
-        filename = get_data('wordlist.txt')
-    f = open(filename)
     global words
-    words = f.readlines()
-    words = [w.strip() for w in words if w]
+    if not wordlist:
+        # no wordlist was provided, load the wordlist from the local store
+        filename = get_data('wordlist.txt')
+        f = open(filename)
+        wordlist = f.readlines()
+        wordlist = [w.strip() for w in wordlist if w]
+    words = wordlist
