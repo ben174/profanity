@@ -49,7 +49,6 @@ setup(
     author_email='ben174@gmail.com',
     packages=['profanity'],
     url='https://github.com/ben174/profanity',
-    summary='A Python library to clean profanity in text.',
     description=profanity.__doc__,
     long_description=__doc__,
     classifiers=(
