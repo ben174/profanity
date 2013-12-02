@@ -64,7 +64,7 @@ setup(
         'Programming Language :: Python :: 3.3',),
     data_files=[('data', ['profanity/data/wordlist.txt']), ],
     package_data={
-        '': ['*.txt', 'data/wordlist.txt'],
+        '': ['profanity/data/wordlist.txt'],
     },
     include_package_data=True,
     entry_points={
