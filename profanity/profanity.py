@@ -92,8 +92,8 @@ def main():
                         help='Text to check.')
     parser.add_argument("--censor", help="Returns censored text.",
                         action="store_true")
-
     args = parser.parse_args()
+
     if args.path:
         f = open(args.path)
         text = "".join(f.readlines())
