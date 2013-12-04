@@ -18,12 +18,27 @@ A Python library to check for (and clean) profanity in strings.
     profanity.censor("You smell like shit.")
     Out: 'You smell like !@#$.'
 
+    # load my own custom bad words
+    custom_badwords = ['happy', 'jolly', 'merry']                           
+    profanity.load_words(custom_badwords)
+    
+    profanity.contains_profanity("Have a merry day! :)")
+    Out: True
+
+
 ## Features
 
 * Load your own wordlist, or use the bundled one.
 * Censors words using standard censor characters (!@#$%), or load your own censor characters. 
 * Uses a pool of censor characters to create a more natural censor string. 
 * Censors all instances of a given word with the same censor string - for easy correlation.
+
+
+## #TODO
+
+* Support for whole words vs. partial words
+* Regex support
+
 
 ### I love Forks, Pull Requests, and Bugs!
 
