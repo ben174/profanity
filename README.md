@@ -3,6 +3,9 @@ profanity
 
 A Python library to check for (and clean) profanity in strings.
 
+![Q-Bert spitting some profanity][logo]
+[logo]: http://i.imgur.com/kmz4Qx7.png
+
 ##Installation
     pip install profanity
 
