@@ -81,3 +81,17 @@ def load_words(wordlist=None):
         wordlist = f.readlines()
         wordlist = [w.strip() for w in wordlist if w]
     words = wordlist
+
+def count_profanity(input_text):
+    """Returns the number of swear words in an inputted piece of text.
+    """
+    censored_text = censor(input_text).split()
+    input_text_split = input_text.split()
+
+    difference_counter = 0
+
+    for censored_word, actual_word in zip(censored_text, input_text_split):
+        if censored_word != actual_word:
+            difference_counter = difference_counter + 1
+
+    return difference_counter
