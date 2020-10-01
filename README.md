@@ -6,11 +6,11 @@ A Python library to check for (and clean) profanity in strings.
 ![Q-Bert spitting some profanity][logo]
 [logo]: http://i.imgur.com/kmz4Qx7.png
 
-##Installation
-    pip install profanity
+## Installation
+   using pip install profanity
 
 
-##Usage
+## Usage
     from profanity import profanity
     profanity.contains_profanity("You smell like shit.")
     Out: True
