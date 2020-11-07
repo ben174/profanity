@@ -77,7 +77,7 @@ def load_words(wordlist=None):
     if not wordlist:
         # no wordlist was provided, load the wordlist from the local store
         filename = get_data('wordlist.txt')
-        f = open(filename)
-        wordlist = f.readlines()
-        wordlist = [w.strip() for w in wordlist if w]
+        with open(filename) as f
+            wordlist = f.readlines()
+            wordlist = [w.strip() for w in wordlist if w]
     words = wordlist
